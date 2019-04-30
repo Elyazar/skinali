@@ -9,10 +9,6 @@ body
     color: $primary
     padding: 17px 22px
     +bold
-    @media (max-width: 324px)
-        font-size: 10px
-        padding: 10px 11px
-        margin-left: 20px
 .button
     border: none
     padding: 25px 45px
@@ -21,3 +17,27 @@ body
     color: #fff
     font-size: 15px
     +bold
+.bg-secondary
+    background-color: $bg-secondary
+input[type="checkbox"]
+    display: none
+    &:checked + label:before
+        background-color: $primary
+.checkbox
+    &__label
+        display: flex
+        align-items: center
+        margin-right: 40px
+        &:hover
+            cursor: pointer
+        &:before
+            content: ''
+            width: 30px
+            height: 30px
+            border: 1px solid $border-form
+            margin-right: 20px
+@media (max-width: 324px)
+    .button-o
+        font-size: 10px
+        padding: 10px 11px
+        margin-left: 20px
