@@ -7,6 +7,7 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Фабрика скинали</title>
 	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/twentytwenty.css">
 </head>
 
 <body>
@@ -16,7 +17,7 @@
 					<div class="conteiner">
 						<nav class="menu__nav">
 							<a href="#" class="menu__link">Главная</a>
-							<a href="#" class="menu__link">продукция</a>
+							<a href="#features" class="menu__link">Преимущества</a>
 							<a href="#" class="menu__link">каталог</a>
 							<a href="#" class="menu__link">примеры работ</a>
 							<a href="#" class="menu__link">примерка изображений</a>
@@ -46,7 +47,7 @@
 						<a class="navbar__phone" href="tel:+74991234567">+7 499 123-45-67</a>
 						<a class="navbar__email navbar__small-text" href="mailto:info!mail.cu">info!mail.cu</a>
 					</div>
-					<button class="button-o navbar__button">Получить консультацию</button>
+					<a href="#offer" class="button-o navbar__button">Получить консультацию</a>
 				</div>
 				<!-- /.navbar-wrap -->
 			</div>
@@ -59,9 +60,9 @@
 					Гарантия минимальной цены на скинали
 				</h1>
 				<span class="hero__subtitle">от 3 000 р/м2</span>
-				<button class="button hero__button">
+				<a href="#offer" class="button hero__button">
 					Заказать скинали
-				</button>
+				</a>
 			</div>
 			<!-- /.conteiner -->
 		</div>
@@ -71,7 +72,7 @@
 	<!-- /.header -->
 
 	<main>
-		<section class="offer bg-secondary">
+		<section class="offer bg-secondary" id="offer">
 			<div class="conteiner">
 				<div class="offer__block offer-block offer-block_calc-bg">
 					<div class="offer__title">Оставьте заявку на расчет</div>
@@ -81,17 +82,24 @@
 							
 							<div class="form__group">
 								<label for="" class="form__label">Вид стекла</label>
-								<input type="text" class="input form__input">
+								<input type="hidden" name="type" id="select-type" value="С печатью">
+								<div class="select from__select">
+									<div class="select_checked">С печатью</div>
+									<ul class="select__dropdown">
+										<li class="select__option" data-value="С печатью">С печатью</li>
+										<li class="select__option" data-value="Без печати">Без печати</li>
+									</ul>
+								</div>
 							</div>
 							
 							<div class="form__group">
 								<label for="" class="form__label">Ширина, см</label>
-								<input type="text" class="input form__input">
+								<input type="number" class="input form__input">
 							</div>
 							
 							<div class="form__group">
 								<label for="" class="form__label">Высота, см</label>
-								<input type="text" class="input form__input">
+								<input type="number" class="input form__input">
 							</div>
 							
 						</div>
@@ -132,7 +140,7 @@
 			<!-- /.conteiner -->
 		</section>
 		<!-- /.offer -->
-		<section class="features section">
+		<section class="features section" id="features">
 			<div class="conteiner">
 				<h2 class="section-title section__title">НАШИ ПРЕИМУЩЕСТВА</h2>
 				<div class="features-block">
@@ -476,6 +484,46 @@
 			</div>
 		</section>
 
+		<section class="section before">
+			<div class="conteiner">
+				<h2 class="section-title section__title">ДО И ПОСЛЕ</h2>
+				<!-- /.section-title section__title -->
+				<div class="before-slider-wrap">
+						<div class="before-slider">
+								<div class="before-slider__item">
+									<div class="before-after">
+										<img src="img/before-slider/sample-before.png" alt="">
+										<img src="img/before-slider/sample-after.png" alt="">
+									</div>
+								</div>
+								<div class="before-slider__item">
+										<div class="before-after">
+												<img src="img/before-slider/sample-before.png" alt="">
+												<img src="img/before-slider/sample-after.png" alt="">
+											</div>
+								</div>
+								<div class="before-slider__item">
+										<div class="before-after">
+												<img src="img/before-slider/sample-before.png" alt="">
+												<img src="img/before-slider/sample-after.png" alt="">
+											</div>
+								</div>
+							</div>
+							<div class="before-slider-arrows">
+									<button class="arrow arrow-left">
+										<img src="img/before-slider/left.png" alt="left">
+									</button>
+										<button class="arrow arrow-right">
+											<img src="img/before-slider/right.png" alt="right">
+										</button>
+									</div>
+				</div>
+				<!-- /.before-slider-wrap -->
+			</div>
+			<!-- /.conteiner -->
+		</section>
+		<!-- /.section before -->
+
 		<section class="section reviews">
 			<div class="conteiner">
 				<h2 class="section-title section__title">
@@ -539,7 +587,7 @@
 								</div>
 								
 								<div class="form__group">
-									<input type="text" class="input form__input" placeholder="Ваш телефон">
+									<input type="tel" class="input form__input" placeholder="Ваш телефон">
 								</div>
 								
 								<div class="form__group">
@@ -586,6 +634,7 @@
 				<!-- /.conteiner -->
 			</section>
 			<!-- /.section factory -->
+
 			<section class="section contacts">
 				<div class="conteiner">
 					<h2 class="section-title section__title">Контакты</h2>
@@ -686,6 +735,16 @@
 
 	<!-- Подключение виджета обратной связи -->
 	<script type="text/javascript" src="https://spikmi.com/Widget?Id=712"></script>
+
+	<!-- Подключение яндекс карт -->
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+	<script src="js/jquery.event.move.js"></script>
+	<script src="js/jquery.twentytwenty.js"></script>
+
+	<!-- Подключение слайдера и телефонной маски -->
+	<script src="js/slick.min.js"></script>
+	<script src="js/main.js"></script>
+	<script src="js/jquery.maskedinput.min.js"></script>
 </body>
 
 </html>
